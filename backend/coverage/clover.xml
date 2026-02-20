@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1771537314775" clover="3.2.0">
+  <project timestamp="1771537314775" name="All files">
+    <metrics statements="63" coveredstatements="62" conditionals="18" coveredconditionals="18" methods="12" coveredmethods="11" elements="93" coveredelements="91" complexity="0" loc="63" ncloc="63" packages="2" files="6" classes="6"/>
+    <package name="dtos">
+      <metrics statements="11" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+      <file name="attendance.dto.ts" path="C:\Users\juan_\source\repos\employee-system\backend\src\dtos\attendance.dto.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="9" count="15" type="stmt"/>
+      </file>
+      <file name="employee.dto.ts" path="C:\Users\juan_\source\repos\employee-system\backend\src\dtos\employee.dto.ts">
+        <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="8" count="19" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="usecases">
+      <metrics statements="52" coveredstatements="52" conditionals="18" coveredconditionals="18" methods="8" coveredmethods="8"/>
+      <file name="CreateEmployeeUseCase.ts" path="C:\Users\juan_\source\repos\employee-system\backend\src\usecases\CreateEmployeeUseCase.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="11" count="10" type="stmt"/>
+        <line num="12" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
+      </file>
+      <file name="GetAttendanceHistoryUseCase.ts" path="C:\Users\juan_\source\repos\employee-system\backend\src\usecases\GetAttendanceHistoryUseCase.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="15" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+      </file>
+      <file name="RegisterEntryUseCase.ts" path="C:\Users\juan_\source\repos\employee-system\backend\src\usecases\RegisterEntryUseCase.ts">
+        <metrics statements="15" coveredstatements="15" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="13" count="8" type="stmt"/>
+        <line num="14" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="17" count="8" type="stmt"/>
+        <line num="18" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="22" count="7" type="stmt"/>
+        <line num="23" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="27" count="5" type="stmt"/>
+      </file>
+      <file name="RegisterExitUseCase.ts" path="C:\Users\juan_\source\repos\employee-system\backend\src\usecases\RegisterExitUseCase.ts">
+        <metrics statements="19" coveredstatements="19" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="14" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="7" type="stmt"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="18" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="22" count="6" type="stmt"/>
+        <line num="23" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="27" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

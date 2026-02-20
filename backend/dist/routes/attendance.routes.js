@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const attendance_controller_1 = require("../controllers/attendance.controller");
+const router = (0, express_1.Router)();
+router.post("/check-in/:cedula", attendance_controller_1.checkIn);
+router.post("/check-out/:cedula", attendance_controller_1.checkOut);
+router.get("/status/:cedula", attendance_controller_1.getAttendanceStatus);
+router.get("/history/:cedula", attendance_controller_1.getAttendanceHistory);
+exports.default = router;

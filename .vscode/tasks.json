@@ -1,0 +1,56 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "backend: test unit",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "test:unit", "--prefix", "backend"],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "backend: test integration",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "test:integration", "--prefix", "backend"],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "backend: test e2e",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "test:e2e", "--prefix", "backend"],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "backend: test coverage",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "test:coverage", "--prefix", "backend"],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "backend: build",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "build", "--prefix", "backend"],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "backend: test all",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "backend: test unit",
+        "backend: test integration",
+        "backend: test e2e"
+      ],
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}

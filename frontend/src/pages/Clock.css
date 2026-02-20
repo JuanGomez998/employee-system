@@ -1,0 +1,441 @@
+/* Clock Interface Styles */
+/* Kiosk-style interface for employee attendance */
+
+.clock-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Success flash animation */
+@keyframes flash-success {
+  0% {
+    background-color: rgba(76, 175, 80, 0);
+  }
+  20% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+  80% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+  100% {
+    background-color: rgba(76, 175, 80, 0);
+  }
+}
+
+.clock-container.flash-success {
+  animation: flash-success 2s ease-in-out;
+}
+
+/* Success overlay message */
+.success-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #4caf50;
+  color: white;
+  padding: 40px 60px;
+  border-radius: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideInScale 0.5s ease-out;
+}
+
+@keyframes slideInScale {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Error shake animation */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+.clock-container.shake-error {
+  animation: shake 0.5s ease-in-out;
+}
+
+.error-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f44336;
+  color: white;
+  padding: 40px 60px;
+  border-radius: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  animation: slideInScale 0.5s ease-out;
+}
+
+/* Header */
+.clock-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  text-align: center;
+}
+
+.logo {
+  font-size: clamp(44px, 8vw, 72px);
+  margin-bottom: 12px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.clock-header h1 {
+  font-size: clamp(20px, 4vw, 32px);
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Time display */
+.time-display {
+  text-align: center;
+  padding: 10px 12px;
+}
+
+.time {
+  font-size: clamp(28px, 6vw, 52px);
+  font-weight: 300;
+  font-family: "Courier New", monospace;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.date {
+  font-size: clamp(12px, 2vw, 18px);
+  color: #b0b0b0;
+  text-transform: capitalize;
+}
+
+/* Clock interface */
+.clock-interface {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 16px;
+  gap: 12px;
+}
+
+/* Input section */
+.input-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-section label {
+  font-size: clamp(18px, 3vw, 26px);
+  font-weight: 600;
+  color: #fff;
+}
+
+.employee-id-input {
+  width: 100%;
+  max-width: 400px;
+  font-size: clamp(18px, 3vw, 26px);
+  padding: 14px 16px;
+  border: 3px solid #4a90e2;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.employee-id-input:focus {
+  outline: none;
+  border-color: #64b5f6;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 20px rgba(100, 181, 246, 0.5);
+}
+
+.employee-id-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.employee-id-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Keypad */
+.keypad-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+  gap: 10px;
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+.keypad-btn {
+  width: 70px;
+  height: 70px;
+  font-size: 22px;
+  font-weight: 600;
+  border: 2px solid #4a90e2;
+  border-radius: 8px;
+  background: rgba(74, 144, 226, 0.1);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  hover: none;
+}
+
+.keypad-btn:hover:not(:disabled) {
+  background: rgba(74, 144, 226, 0.3);
+  border-color: #64b5f6;
+  transform: scale(1.05);
+}
+
+.keypad-btn:active:not(:disabled) {
+  transform: scale(0.95);
+  background: rgba(74, 144, 226, 0.5);
+}
+
+.keypad-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.keypad-btn.keypad-special {
+  background: rgba(255, 152, 0, 0.1);
+  border-color: #ff9800;
+}
+
+.keypad-btn.keypad-special:hover:not(:disabled) {
+  background: rgba(255, 152, 0, 0.3);
+  border-color: #ffb74d;
+}
+
+.keypad-btn.clear-btn {
+  grid-column: 2 / 3;
+  background: rgba(244, 67, 54, 0.1);
+  border-color: #f44336;
+}
+
+.keypad-btn.clear-btn:hover:not(:disabled) {
+  background: rgba(244, 67, 54, 0.3);
+  border-color: #ef5350;
+}
+
+/* Main punch button */
+.punch-btn {
+  width: 100%;
+  max-width: 400px;
+  padding: 14px 20px;
+  font-size: clamp(18px, 2.8vw, 24px);
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.punch-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.6);
+  background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+}
+
+.punch-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(76, 175, 80, 0.4);
+}
+
+.punch-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Footer */
+.clock-footer {
+  margin-top: auto;
+  padding: 12px;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .keypad {
+    grid-template-columns: repeat(3, 60px);
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .keypad-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .clock-container {
+    padding: 6px;
+  }
+
+  .keypad {
+    grid-template-columns: repeat(3, 50px);
+    gap: 6px;
+    padding: 10px;
+  }
+
+  .keypad-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .punch-btn {
+    font-size: 16px;
+    padding: 14px 16px;
+    max-width: 90%;
+  }
+
+  .clock-footer {
+    font-size: 11px;
+    padding: 10px;
+  }
+}
+
+@media (max-height: 900px) {
+  .clock-header {
+    padding: 12px 12px;
+  }
+
+  .clock-interface {
+    gap: 12px;
+  }
+
+  .time-display {
+    padding: 4px 8px;
+  }
+
+  .keypad {
+    grid-template-columns: repeat(3, 56px);
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .keypad-btn {
+    width: 56px;
+    height: 56px;
+    font-size: 17px;
+  }
+
+  .punch-btn {
+    padding: 14px 18px;
+    font-size: 17px;
+  }
+
+  .clock-footer {
+    padding: 8px;
+    font-size: 11px;
+  }
+}
+
+@media (max-height: 760px) {
+  .clock-header {
+    padding: 8px 10px;
+  }
+
+  .clock-interface {
+    gap: 10px;
+  }
+
+  .input-section {
+    gap: 8px;
+  }
+
+  .employee-id-input {
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+
+  .keypad {
+    grid-template-columns: repeat(3, 48px);
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .keypad-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 15px;
+  }
+
+  .punch-btn {
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+
+  .clock-footer {
+    display: none;
+  }
+}
